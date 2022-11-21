@@ -1,4 +1,6 @@
 #include "shape.h"
+#include <mywidgets.h>
+#include <QDebug>
 
 Shape::Shape(QObject *parent) :
     QObject(parent), QGraphicsItem()
@@ -22,5 +24,25 @@ void Shape::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 QRectF Shape::boundingRect() const
 {
 
-    return QRectF(-30,-30,60,60);
+    return QRectF(-30,-30,60,60 );
+}
+void Shape::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+
+    this->setPos(mapToScene(event->pos()));
+
+}
+
+void Shape::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    this->setZValue(++Z_coord);
+    this->setCursor(QCursor(Qt::ClosedHandCursor));
+    qDebug() << "Press on object";
+
+
+}
+
+void Shape::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    this->setCursor(QCursor(Qt::ArrowCursor));
 }

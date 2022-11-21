@@ -1,13 +1,14 @@
-#ifndef Ellipse_H
-#define Ellipse_H
+#ifndef Triangle_H
+#define Triangle_H
 
 #include <QWidget>
 #include <QGraphicsItem>
 #include <QPainter>
 #include <QRectF>
+#include <QPolygon>
 #include "shape.h"
 
-class Ellipse :public Shape
+class Triangle :public Shape
 {
     Q_OBJECT
 public:
@@ -21,4 +22,4 @@ private:
 };
 
 
-#endif // Ellipse_H
+#endif // Triangle_H

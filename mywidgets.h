@@ -16,6 +16,8 @@
 #include <QList>
 #include <shape.h>
 #include <ellipse.h>
+#include <myrect.h>
+#include <triangle.h>
 
 #include <vector>
 
@@ -24,25 +26,29 @@ class MainWindow : public QWidget{
 private:
     QPushButton *createRectBtn;
     QPushButton *createEllipseBtn;
+    QPushButton *createTriangleBtn;
     QPushButton *deleteLastShapeBtn;
-
-    //std::vector<Shape*>lastShapes;
 
     QHBoxLayout *bttns;
     QGridLayout *mainLayout;
+
 
     QGraphicsScene *scene;
     QGraphicsView *gview;
 
     QWidget *widget;
+
 private slots:
     void onCrtBtnClicked();
     void onRmvBtnClicked();
     void onCrtEllpsBtnClicked();
+    void onCrtTrnglBtnClicked();
 
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+
 
 
 };

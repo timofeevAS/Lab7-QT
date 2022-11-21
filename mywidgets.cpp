@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     createRectBtn=new QPushButton("Create Shape");
     deleteLastShapeBtn=new QPushButton("Delete Shape");
     createEllipseBtn=new QPushButton("Create Ellipse");
+    createTriangleBtn=new QPushButton("Create Triangle");
 
     widget = new QWidget(this);
 
@@ -28,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     bttns = new QHBoxLayout;
     bttns->addWidget(createRectBtn);
     bttns->addWidget(createEllipseBtn);
+    bttns->addWidget(createTriangleBtn);
     bttns->addWidget(deleteLastShapeBtn);
 
 
@@ -48,6 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(createRectBtn,SIGNAL(clicked()),this,SLOT(onCrtBtnClicked()));
     connect(deleteLastShapeBtn,SIGNAL(clicked()),this,SLOT(onRmvBtnClicked()));
     connect(createEllipseBtn,SIGNAL(clicked()),this,SLOT(onCrtEllpsBtnClicked()));
+    connect(createTriangleBtn,SIGNAL(clicked()),this,SLOT(onCrtTrnglBtnClicked()));
 }
 
 void MainWindow::onRmvBtnClicked(){
@@ -69,7 +72,7 @@ void MainWindow::onRmvBtnClicked(){
 
 void MainWindow::onCrtBtnClicked()
 {
-    Shape *item = new Shape();        // Создаём графический элемент
+    MyRect *item = new MyRect();        // Создаём графический элемент
     item->setPos(randomBetween(30, 470),    // Устанавливаем случайную позицию элемента
                  randomBetween(30, 470));
     scene->addItem(item);   // Добавляем элемент на графическую сцену
@@ -89,6 +92,17 @@ void MainWindow::onCrtEllpsBtnClicked(){
                  randomBetween(30, 470));
     scene->addItem(item);   // Добавляем элемент на графическую сцену
 }
+
+void MainWindow::onCrtTrnglBtnClicked(){
+    //scene->addEllipse(QRectF(randomBetween(30, 470),randomBetween(30, 470),randomBetween(60, 100),randomBetween(60, 100)));
+
+    Triangle *item = new Triangle();        // Создаём графический элемент
+    item->setPos(randomBetween(30, 470),    // Устанавливаем случайную позицию элемента
+                 randomBetween(30, 470));
+    scene->addItem(item);   // Добавляем элемент на графическую сцену
+}
+
+
 
 MainWindow::~MainWindow()
 {

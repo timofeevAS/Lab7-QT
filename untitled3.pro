@@ -4,10 +4,14 @@ QT       += core gui\
 SOURCES += \
     ellipse.cpp \
     main.cpp \
+    myrect.cpp \
     mywidgets.cpp \
-    shape.cpp
+    shape.cpp \
+    triangle.cpp
 
 HEADERS += \
     ellipse.h \
+    myrect.h \
     mywidgets.h \
-    shape.h
+    shape.h \
+    triangle.h

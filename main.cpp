@@ -10,7 +10,9 @@
 
 #include <iostream>
 #include <mywidgets.h>
+#include "shape.h"
 
+int Shape::Z_coord = 0;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);

@@ -1,16 +1,16 @@
-#ifndef Ellipse_H
-#define Ellipse_H
+#ifndef myRect_H
+#define myRect_H
 
+#include "shape.h"
 #include <QWidget>
 #include <QGraphicsItem>
 #include <QPainter>
 #include <QRectF>
-#include "shape.h"
 
-class Ellipse :public Shape
+class MyRect : public Shape
 {
     Q_OBJECT
-public:
+
 
 signals:
 
@@ -21,4 +21,4 @@ private:
 };
 
 
-#endif // Ellipse_H
+#endif // SHAPE_H
