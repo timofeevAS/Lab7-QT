@@ -6,9 +6,8 @@
 #include <QPainter>
 #include <QRectF>
 
-#include "shape.h"
 
-class Ellipse :public Shape
+class Ellipse :public QObject, public QGraphicsItem
 {
     Q_OBJECT
 public:

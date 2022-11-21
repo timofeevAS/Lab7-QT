@@ -84,7 +84,7 @@ void MainWindow::onCrtBtnClicked()
 void MainWindow::onCrtEllpsBtnClicked(){
     //scene->addEllipse(QRectF(randomBetween(30, 470),randomBetween(30, 470),randomBetween(60, 100),randomBetween(60, 100)));
 
-    Shape *item = new Shape();        // Создаём графический элемент
+    Ellipse *item = new Ellipse();        // Создаём графический элемент
     item->setPos(randomBetween(30, 470),    // Устанавливаем случайную позицию элемента
                  randomBetween(30, 470));
     scene->addItem(item);   // Добавляем элемент на графическую сцену
