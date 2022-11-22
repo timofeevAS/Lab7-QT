@@ -9,8 +9,8 @@ static int randomBetween(int low, int high)
 
 MainWindow::MainWindow(QWidget *parent)
 {
-    this->resize(640,640);          // Устанавливаем размеры окна приложения
-    this->setFixedSize(640,640);
+    this->resize(530,550);          // Устанавливаем размеры окна приложения
+    this->setFixedSize(530,550);
     setWindowTitle("Lab7");
 
     createRectBtn=new QPushButton("Create Shape");
@@ -39,11 +39,15 @@ MainWindow::MainWindow(QWidget *parent)
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
     scene->setSceneRect(0,0,500,500);
 
-    QWidget *myw=new QWidget();
+    QWidget *myw=new QWidget(this);
 
 
 
     gview = new QGraphicsView(scene,myw);
+
+    //gview->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+    //gview->setDragMode(QGraphicsView::RubberBandDrag);
+    //gview->setMouseTracking(false);
     gview->resize(600,600);
     mainLayout->addWidget(gview,0,0);
 
@@ -96,7 +100,7 @@ void MainWindow::onCrtEllpsBtnClicked(){
 void MainWindow::onCrtTrnglBtnClicked(){
     //scene->addEllipse(QRectF(randomBetween(30, 470),randomBetween(30, 470),randomBetween(60, 100),randomBetween(60, 100)));
 
-    Triangle *item = new Triangle();        // Создаём графический элемент
+    Triangle *item = new Triangle(30,30,-30,-30,30,-30);        // Создаём графический элемент
     item->setPos(randomBetween(30, 470),    // Устанавливаем случайную позицию элемента
                  randomBetween(30, 470));
     scene->addItem(item);   // Добавляем элемент на графическую сцену
@@ -108,6 +112,7 @@ MainWindow::~MainWindow()
 {
     delete createRectBtn;
     delete deleteLastShapeBtn;
+    delete createEllipseBtn;
+    delete createTriangleBtn;
     delete bttns;
 }
-

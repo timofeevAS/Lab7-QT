@@ -26,11 +26,14 @@ QRectF Shape::boundingRect() const
 
     return QRectF(-30,-30,60,60 );
 }
+
 void Shape::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-
     this->setPos(mapToScene(event->pos()));
-
+    if(this->pos().x()>500 || this->pos().x()<-30||this->pos().y()>500 || this->pos().y()<-30){
+        delete this;
+        qDebug() <<"From borders";
+    }
 }
 
 void Shape::mousePressEvent(QGraphicsSceneMouseEvent *event)

@@ -7,4 +7,3 @@ void MyRect::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     painter->drawRect(-30,-30,60,60);
 
 }
-

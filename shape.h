@@ -2,6 +2,7 @@
 #define SHAPE_H
 
 #include <QObject>
+#include <QWidget>
 #include <QGraphicsItem>
 #include <QPainter>
 #include <QGraphicsSceneMouseEvent>

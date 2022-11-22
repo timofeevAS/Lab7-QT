@@ -6,4 +6,3 @@ void Ellipse::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, Q
     painter->setBrush(QBrush(QColor(138,43,226)));
     painter->drawEllipse(QRectF(-30,-30,60,60));
 }
-
